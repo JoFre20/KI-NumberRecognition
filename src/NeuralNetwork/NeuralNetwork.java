@@ -49,7 +49,7 @@ public class NeuralNetwork {
         		for(int k = 0; k < layers[i-1].neurons.length; k++) {
         			sum += layers[i-1].neurons[k].value*layers[i].neurons[j].weights[k];
         		}
-        		sum += layers[i].neurons[j].bias; // TODO add in the bias
+        		sum += layers[i].neurons[j].bias;
         		layers[i].neurons[j].value = StatUtil.Sigmoid(sum);
         	}
         } 	
