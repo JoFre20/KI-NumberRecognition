@@ -41,7 +41,6 @@ public class NeuralNetwork {
 	}
     
     public static void forward(float[] inputs) {
-    	// First bring the inputs into the input layer layers[0]
     	layers[0] = new Layer(inputs);
     	
         for(int i = 1; i < layers.length; i++) {
