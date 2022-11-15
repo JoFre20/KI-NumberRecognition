@@ -13,6 +13,7 @@ import Utilis.JsonHelper;
 public class Main {
 	
 	//TODO: Add Class were you can Check the accuracy of the Neural Network
+	//TODO: Add Class witch can Generate a Picture out of the PixelArray
 	
 	private static NeuralNetwork neuralnetwork = new NeuralNetwork();
 	
