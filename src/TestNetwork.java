@@ -18,11 +18,11 @@ public class TestNetwork {
 		MUtil = new MnistUtil();
 		String Modeljson = fileHelper.readFromDisk("files/Model.json");
 		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, Layer[].class));
-        int correct = 0;
+        	int correct = 0;
 		for (MnistImage mnistimg : MUtil.getImages(100)) {
-            if((neuralnetwork.recognitionNumber(StatUtil.ArrayListtoFloatArray(mnistimg.getImgdata()))+"") == (mnistimg.getLabel()+"")) {
-                correct += 1;
-            }
+            		if((neuralnetwork.recognitionNumber(StatUtil.ArrayListtoFloatArray(mnistimg.getImgdata()))+"") == (mnistimg.getLabel()+"")) {
+                		correct += 1;
+            		}
 		}
 		System.out.println("Genauigkeit: " + (correct/100)*100);
 	}
