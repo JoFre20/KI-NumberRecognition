@@ -1,3 +1,4 @@
+package StartClasses;
 import java.io.IOException;
 
 import com.google.gson.Gson;
@@ -34,6 +35,10 @@ public class Main {
            
 		}
 		System.out.println("");
+	}
+	
+	public static FileHelper getFileHelper() {
+		return fileHelper;
 	}
 
 }

@@ -62,6 +62,11 @@ public class FileHelper {
 		return null;
 	}
 	
+	public File readFromDiskFile(String name) {
+		File file = new File(name);
+		return file;
+	}
+	
 	public void deleteFile(String name) {
 		File file = new File(name + ((name.contains(".json")) ? "" : ".json"));
 		file.delete();

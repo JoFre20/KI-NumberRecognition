@@ -1,3 +1,4 @@
+package StartClasses;
 import java.io.IOException;
 
 import MNISTUtilis.MnistImage;
