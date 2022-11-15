@@ -12,6 +12,8 @@ import Utilis.JsonHelper;
 
 public class Main {
 	
+	//TODO: Add Class were you can Check the accuracy of the Neural Network
+	
 	private static NeuralNetwork neuralnetwork = new NeuralNetwork();
 	
 	public static FileHelper fileHelper = new FileHelper();
