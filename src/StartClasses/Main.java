@@ -1,15 +1,13 @@
 package StartClasses;
 import java.io.IOException;
 
-import com.google.gson.Gson;
-
 import MNISTUtilis.MnistImage;
 import MNISTUtilis.MnistUtil;
-import NeuralNetwork.Layer;
 import NeuralNetwork.NeuralNetwork;
 import NeuralNetwork.StatUtil;
 import Utilis.FileHelper;
 import Utilis.JsonHelper;
+import lib.NeuralNetworkSave;
 
 public class Main {
 	
@@ -26,7 +24,7 @@ public class Main {
 		fileHelper.init();
 		MUtil = new MnistUtil();
 		String Modeljson = fileHelper.readFromDisk("files/Model.json");
-		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, Layer[].class));
+		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, NeuralNetworkSave.class).getNETWORK());
 		for (MnistImage mnistimg : MUtil.getImages(1)) {
 			System.out.println("============");
             System.out.println("KI-Output: " + neuralnetwork.recognitionNumber(StatUtil.ArrayListtoFloatArray(mnistimg.getImgdata())));

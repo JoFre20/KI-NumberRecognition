@@ -3,11 +3,11 @@ import java.io.IOException;
 
 import MNISTUtilis.MnistImage;
 import MNISTUtilis.MnistUtil;
-import NeuralNetwork.Layer;
 import NeuralNetwork.NeuralNetwork;
 import NeuralNetwork.StatUtil;
 import Utilis.FileHelper;
 import Utilis.JsonHelper;
+import lib.NeuralNetworkSave;
 
 public class TestNetwork {
 	
@@ -24,7 +24,7 @@ public class TestNetwork {
 		fileHelper.init();
 		MUtil = new MnistUtil();
 		String Modeljson = fileHelper.readFromDisk("files/Model.json");
-		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, Layer[].class));
+		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, NeuralNetworkSave.class).getNETWORK());
         int correct = 0;
         System.out.println("");
         System.out.println("-------------------------");

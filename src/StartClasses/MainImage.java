@@ -3,13 +3,12 @@ package StartClasses;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import MNISTUtilis.MnistUtil;
-import NeuralNetwork.Layer;
 import NeuralNetwork.NeuralNetwork;
 import NeuralNetwork.StatUtil;
 import Utilis.FileHelper;
 import Utilis.ImageHelper;
 import Utilis.JsonHelper;
+import lib.NeuralNetworkSave;
 
 public class MainImage {
 	
@@ -20,7 +19,7 @@ public class MainImage {
 	public static void main(String[] args) throws IOException {
 		fileHelper.init();
 		String Modeljson = fileHelper.readFromDisk("files/Model.json");
-		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, Layer[].class));
+		neuralnetwork.init(JsonHelper.JsonToClass(Modeljson, NeuralNetworkSave.class).getNETWORK());
 		ArrayList<Float> ImageData = ImageHelper.getImageData("Image.jpeg");
 		int KINumber = neuralnetwork.recognitionNumber(StatUtil.ArrayListtoFloatArray(ImageData));
 		System.out.println("============");
